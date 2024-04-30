@@ -2,21 +2,13 @@
 uid: Web_apps_Feature_Release_10.3.12
 ---
 
-# DataMiner web apps Feature Release 10.3.12 – Preview
+# DataMiner web apps Feature Release 10.3.12
 
-> [!IMPORTANT]
-> We are still working on this release. Some release notes may still be modified or moved to a later release. Check back soon for updates!
+> [!NOTE]
+> For known issues with this version, refer to [Known issues](xref:Known_issues).
 
 > [!TIP]
 > For release notes for this release that are not related to the web applications, see [General Feature Release 10.3.12](xref:General_Feature_Release_10.3.12).
-
-## Highlights
-
-*No highlights have been selected yet.*
-
-## New features
-
-*No new features have been added yet.*
 
 ## Changes
 
@@ -26,9 +18,9 @@ uid: Web_apps_Feature_Release_10.3.12
 
 <!-- MR 10.3.0 [CU9] - FR 10.3.12 -->
 
-Unlike other UI block types, *FileSelector* does not allow setting an [InitialValue](xref:Skyline.DataMiner.Automation.UIBlockDefinition#Skyline_DataMiner_Automation_UIBlockDefinition_InitialValue). However, from now on, during an interactive Automation script session, it is possible to keep the files that were already uploaded after the UI was shown.
+Unlike other UI block types, *FileSelector* does not allow setting an [InitialValue](xref:Skyline.DataMiner.Automation.UIBlockDefinition.InitialValue). However, from now on, during an interactive Automation script session, it is possible to keep the files that were already uploaded after the UI was shown.
 
-When an interactive Automation script is executed **in a web app**, the UI block needs to keep the same [Row](xref:Skyline.DataMiner.Automation.UIBlockDefinition#Skyline_DataMiner_Automation_UIBlockDefinition_Row), [Column](xref:Skyline.DataMiner.Automation.UIBlockDefinition#Skyline_DataMiner_Automation_UIBlockDefinition_Column), and [DestVar](xref:Skyline.DataMiner.Automation.UIBlockDefinition#Skyline_DataMiner_Automation_UIBlockDefinition_DestVar) within the session. If a block of a different type or [DestVar](xref:Skyline.DataMiner.Automation.UIBlockDefinition#Skyline_DataMiner_Automation_UIBlockDefinition_DestVar) is at same location or that location has no blocks when the UI is shown again, the information about the uploaded files is lost.
+When an interactive Automation script is executed **in a web app**, the UI block needs to keep the same [Row](xref:Skyline.DataMiner.Automation.UIBlockDefinition.Row), [Column](xref:Skyline.DataMiner.Automation.UIBlockDefinition.Column), and [DestVar](xref:Skyline.DataMiner.Automation.UIBlockDefinition.DestVar) within the session. If a block of a different type or [DestVar](xref:Skyline.DataMiner.Automation.UIBlockDefinition.DestVar) is at same location or that location has no blocks when the UI is shown again, the information about the uploaded files is lost.
 
 See also [DataMiner Cube Feature Release 10.3.12](xref:Cube_Feature_Release_10.3.12#interactive-automation-scripts-fileselector-now-allows-to-keep-the-files-that-were-already-uploaded-after-the-ui-was-shown-id_37260)
 

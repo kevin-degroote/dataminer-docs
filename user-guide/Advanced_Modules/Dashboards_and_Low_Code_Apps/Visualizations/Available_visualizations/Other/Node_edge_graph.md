@@ -4,7 +4,7 @@ uid: DashboardNodeEdgeGraph
 
 # Node edge graph
 
-> [!WARNING]
+> [!NOTE]
 > This feature is in preview until DataMiner 10.1.5. If you use the preview version of the feature, its functionality may be different from what is described below. For more information, see [Soft-launch options](xref:SoftLaunchOptions).
 
 Available from DataMiner 10.2.0/10.1.5 onwards. Prior to this, the component is available in soft launch from DataMiner 10.0.4 onwards, if the soft-launch option *ReportsAndDashboardsPTP* is enabled.
@@ -12,6 +12,8 @@ Available from DataMiner 10.2.0/10.1.5 onwards. Prior to this, the component is 
 This component allows you to visualize any type of objects (i.e. “nodes”) and the connections between them (i.e. “edges”). By linking parameters and properties to those nodes and edges, you can turn a node edge graph into a full-fledged analytical tool that shows real-time alarm statuses and KPI data
 
 The data necessary to create a node edge graph can be provided by means of GQI queries. Node queries provide data that will be visualized as nodes (i.e. objects), whereas edge queries provide data that will be visualized as edges (i.e. connections between objects). Clicking items in the node edge graph also makes these available as a feed for other components. Keeping the Ctrl key pressed while you click them allows you to select multiple items at the same time.
+
+When edges are closely grouped together, edge labels may become minimized. If you hover the mouse pointer over the edge, the label becomes visible again. From DataMiner 10.3.0 [CU4]/10.4.0 [CU2]/10.4.5 onwards<!--RN 38974-->, you can press Ctrl+Space to display all labels in the node edge graph.
 
 The component uses dynamic coloring, which can be adjusted according to preference. When you hover the mouse pointer over a node or edge, a tooltip is displayed with detailed info. Click the circle in the top-right corner of the tooltip to switch between different coloring modes for all the nodes or edges of this type:
 
@@ -88,6 +90,12 @@ To configure actions:
 1. In the *Icon* box, select an icon for the action.
 
 1. In the *Action* box, select the action that should be executed. See [Configuring low-code app events](xref:LowCodeApps_event_config).
+
+You can configure the following [**component actions**](xref:LowCodeApps_event_config#executing-a-component-action):
+
+- *Fetch the data*: Fetches the data for the component. Available from DataMiner 10.2.10/10.3.0 onwards.
+
+- *Clear selection*: Clear the feed status of the component. Available from DataMiner 10.3.0 [CU14]/10.4.0 [CU2]/10.4.5 onwards<!--RN 38974-->.
 
 > [!NOTE]
 > You can also override the default action for a node or edge using the *Add override* option.
