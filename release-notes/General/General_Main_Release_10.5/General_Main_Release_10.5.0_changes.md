@@ -268,7 +268,7 @@ From now on, at DataMiner startup, SLDataMiner will load protocols in parallel. 
 
 When the *ResourceManagerHelper* methods *UpdateReservationInstanceProperties* or *SafelyUpdateReservationInstanceProperties* were used to update properties of a booking, up to now, their action was queued on the master DMA to be handled sequentially for all bookings.
 
-From now on, the *SetSrmJsonSerializableProperties* requests sent by the above-mentioned methods will skip said queue.
+From now on, the *SetSrmJsonSerializableProperties* requests will skip said queue.
 
 #### Enhanced SLDBConnection logging [ID_39267]
 
@@ -446,11 +446,25 @@ This type of exceptions will be now be properly caught and logged as warnings so
 
 A *ModelHostException* could be thrown while checking whether the DataMiner System was licensed to use the ModelHost DxM.
 
+#### Issues with user accounts [ID_39234]
+
+<!-- MR 10.5.0 - FR 10.4.7 -->
+
+In some cases, user accounts could become corrupted and group memberships could get lost.
+
+Also, in some cases, SLDataMiner could stop working when an alarm template or trend template was uploaded, removed, assigned or unassigned.
+
 #### Skyline Device Simulator: Problem when loading HTTP simulation files that contained additional tags [ID_39379]
 
 <!-- MR 10.5.0 - FR 10.4.6 -->
 
 In some cases, when you tried to load a PDML file containing an HTTP simulation, the simulation would fail to load, especially when the PDML file contained additional tags (e.g. comments).
+
+#### MessageBroker: Problem when trying to read a file that was being updated by another process [ID_39408]
+
+<!-- MR 10.5.0 - FR 10.4.7 -->
+
+In some rare cases, an exception could be thrown when MessageBroker tried to read a file that was being updated by another process.
 
 #### STaaS: Problem when using a delete statement with a filter [ID_39416]
 
@@ -461,3 +475,9 @@ When, on a STaaS system, an attempt was made to delete data from the database us
 `Provided delete filter resulted in a post filter, post filtering is not supported for cloud delete requests.`
 
 This issue has now been fixed.
+
+#### Problem when disposing an ISession with multiple subscriptions [ID_39483]
+
+<!-- MR 10.5.0 - FR 10.4.7 -->
+
+In some cases, an `InvalidOperationException` could be thrown when a .NET Framework host application (e.g. DataMiner Automation) disposed an ISession with multiple subscriptions without having disposed the subscriptions first.
